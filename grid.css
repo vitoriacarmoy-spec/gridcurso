@@ -160,13 +160,13 @@ padding: 1rem;
 .ooo{ 
     height: 100vh;
     display: grid; 
-    grid-template-columns:repeat(4,1fr) ;
+    grid-template-columns:repeat(auto-fit,100px) ;
     grid-template-rows: 200px;
     grid-gap: .5rem;
     margin-top: 10px;
-    grid-template-areas: "header header header header"
-    "aside main main main "
-    "aside footer footer footer";
+    grid-template-areas: "header header header header header"
+    "aside main main main  main"
+    "footer footer footer footer footer";
 }
   
 header{
@@ -214,3 +214,24 @@ padding: 1rem;
 }
 
 
+@media(min-width:768px){
+.eee{ 
+    height: 100vh;
+    display: grid; 
+    grid-template-columns:[pizza]repeat(5,1fr)[sorvete]1fr ;
+    grid-template-rows: 200px;
+    grid-gap: .5rem;
+    margin-top: 10px;
+}
+}
+.eee> * div {
+background-color: rgb(74, 99, 99);
+
+
+
+
+}
+
+header, footer{
+    grid-column: pizza/sorvete;
+}
