@@ -218,12 +218,12 @@ padding: 1rem;
 .eee{ 
     height: 100vh;
     display: grid; 
-    grid-template-columns:[pizza]repeat(5,1fr)[sorvete]1fr ;
-    grid-template-rows: 200px;
+    grid-template-columns:[site-start]1fr[content-start]repeat(4,1fr)[site-end];
+    grid-template-rows: [site-top] 200px [content-top] 200px [content-bottom] 200px[site-bottom];
     grid-gap: .5rem;
     margin-top: 10px;
 }
-}
+}  
 .eee> * div {
 background-color: rgb(74, 99, 99);
 
@@ -233,5 +233,9 @@ background-color: rgb(74, 99, 99);
 }
 
 header, footer{
-    grid-column: pizza/sorvete;
+    grid-column: site;
+}
+
+main{
+    grid-column-start: content;
 }
