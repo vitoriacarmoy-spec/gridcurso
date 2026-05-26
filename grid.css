@@ -149,3 +149,68 @@ padding: 1rem;
  grid-row: 3/5;
 
 }
+
+
+
+
+
+
+
+
+.ooo{ 
+    height: 100vh;
+    display: grid; 
+    grid-template-columns:repeat(4,1fr) ;
+    grid-template-rows: 200px;
+    grid-gap: .5rem;
+    margin-top: 10px;
+    grid-template-areas: "header header header header"
+    "aside main main main "
+    "aside footer footer footer";
+}
+  
+header{
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+
+
+.ooo > * div {
+background-color: rgb(74, 99, 99);
+width: 200px;
+height: 200px;
+font-size: 2rem;
+padding: 1rem;
+
+}
+
+.ooo> * div:nth-child(1){ 
+   
+
+}
+
+.ooo> * div:nth-child(2){ 
+    background-color: blueviolet;
+  
+
+}
+
+.ooo> div:nth-child(3){ 
+ 
+
+}
+
+
