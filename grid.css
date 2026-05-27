@@ -23,15 +23,15 @@
 /* divs internas */
 .wrapper div{
     background-color: rgb(50, 106, 158);
-    width: 200px;
+    
     height: 200px;
 }
 
 /* pares */
 .wrapper div:nth-child(2){
     background-color: rgb(172, 53, 53);
-    align-self: end;
-    justify-self: end;
+    align-self: center;
+    justify-self: center;
     
 }
 
@@ -68,50 +68,45 @@
 }
 
 .ghy{
-    display: grid; 
-    grid-template-columns:repeat(1,1fr) ;
-    grid-template-rows: repeat(3,minmax(100px,auto) );
-    grid-gap: 1rem;
-    margin-top: 10px;
-
-    @media (min-width: 768px){
-
-    grid-template-columns: repeat(5, 1fr); /*tem span tbm*/;
- }
- 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 10px ;
 }
 
-.ghy > div {
-background-color: aqua;
-font-size: 2rem;
-padding: 1rem;
-
+/* MOBILE */
+.ghy > div{
+    background-color: rgb(48, 9, 155);
+    padding: 1rem;
 }
 
-.ghy> div:nth-child(1){
- background-color: brown;
- grid-column: 1/ -1 /*tem span tbm*/;
- height: 400px;
+/* DESKTOP */
+@media (min-width: 768px){
 
+    .ghy{
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    .ghy > div:nth-child(1){
+        grid-column: 1 / -1;
+    }
+
+    .ghy > div:nth-child(2){
+        grid-column: 1 / 2;
+    }
+
+    .ghy > div:nth-child(3){
+        grid-column: 2 / 5;
+    }
+
+    .ghy > div:nth-child(4){
+        grid-column: 5 / 6;
+    }
+
+    .ghy > div:nth-child(5){
+        grid-column: 1 / -1;
+    }
 }
-.ghy> div:nth-child(2){
- background-color: brown;
- grid-column: 1/ 1 /*tem span tbm*/;
-
-}
-
-.ghy> div:nth-child(3){
- background-color: brown;
- grid-column: 2/ 5/*tem span tbm*/;
-
-}
-
-.ghy> div:nth-child(5){ 
- background-color: brown;
- grid-column: 1/ -1 /*tem span tbm*/;
-
-}
-
 /*grid rows start */
 
 .aaa{ 
@@ -154,9 +149,6 @@ padding: 1rem;
 
 
 
-
-
-
 .ooo{ 
     height: 100vh;
     display: grid; 
@@ -188,10 +180,9 @@ footer{
 
 
 
-.ooo > * div {
-background-color: rgb(74, 99, 99);
-width: 200px;
-height: 200px;
+.ooo > * {
+background-color: rgb(209, 142, 18);
+
 font-size: 2rem;
 padding: 1rem;
 
@@ -224,18 +215,18 @@ padding: 1rem;
     margin-top: 10px;
 }
 }  
-.eee> * div {
-background-color: rgb(74, 99, 99);
-
+.eee> *  {
+background-color: rgb(187, 16, 96);
+padding: 1rem;
 
 
 
 }
-
+/*mudar nome*/
 header, footer{
-    grid-column: site;
+grid-column: site-start / site-end;
 }
 
 main{
-    grid-column-start: content;
+    grid-column: content-start / site-end;
 }
