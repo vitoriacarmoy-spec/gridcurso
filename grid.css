@@ -241,38 +241,53 @@ padding:20px;
 }}
 
 
-@media(min-width:768px){
-.eee{ 
+
+/*era so comentar e mudar a variavel*/
+@media (min-width: 768px) {
+
+  .eee {
     height: 100vh;
-    display: grid; 
-    grid-template-columns:[site-start]1fr[content-start]repeat(4,1fr)[site-end];
-    grid-template-rows: [site-top] 200px [content-top] 200px [content-bottom] 200px[site-bottom];
-    grid-gap: .5rem;
-    margin-top: 10px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 120px;
+    grid-template-rows: 180px 120px 180px;
+
+    gap: .5rem;
+  }
+
+  .a-header {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    background-color: magenta;
+  }
+
+  .a-main {
+    grid-column: 4;
+    grid-row: 1;
+    background-color: blueviolet;
+  }
+
+  .a-aside {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: crimson;
+  }
+
+  .a-footer {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    background-color: darkgoldenrod;
+  }
+
 }
-}  
-.eee> *  {
-background-color: rgb(187, 16, 96);
-padding: 1rem;
 
 
 
-}
-/*mudar nome*/
-.l-header{ 
-    grid-column: site-start / site-end;
-}.l-footer{
-grid-column: site-start / site-end;
-}
-
-.l-main{
-    grid-column: content-start / site-end;
-}
 
 
 .jjj{
     display: grid;
-    grid-grap:.5rem;
+    grid-gap:.5rem;
     grid-template-areas: 
     "header"
      "main"
@@ -282,15 +297,15 @@ grid-column: site-start / site-end;
 
     ;
     grid-template-columns: 1fr;
-    height: 100vh;
+    height: 150vh;
     margin: 0 auto;
     max-width: 1200px;
-    @media(min-width:48em)  {/**768px*/
+    @media(min-width:48em) {
       grid-template-columns: 1fr repeat(4, minmax(auto,200px))1fr;
       grid-template-rows: .5fr 2fr .5fr .5fr;
 
     }
-}
+
 
 
 .l-header{
@@ -298,16 +313,27 @@ grid-column: site-start / site-end;
     grid-area: header;
 }
 
-l-main{
+.l-main{
     background-color: coral;
     grid-area: main;
 }
 
-l-sidebar{
+.l-sidebar{
     background-color: royalblue;
     grid-area: sidebar;
 } 
 
-l-aside-main{
-    
+.l-aside-main{
+     background-color: rgb(78, 225, 65);
+    grid-area: sidebar;
+} 
+.l-aside-sec{
+ background-color: rgb(212, 41, 50);
+    grid-area: sidebar;
+}
+.l-footer{
+    background-color: rgb(181, 212, 41);
+    grid-area: sidebar;
+}
+
 }
