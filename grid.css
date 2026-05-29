@@ -144,6 +144,11 @@ padding: 1rem;
  grid-row: 3/5;
 
 }
+.aaa> div:nth-child(4){ 
+    grid-column: 4/6;
+ grid-row: 4/6;
+
+}
 
 
 
@@ -152,24 +157,28 @@ padding: 1rem;
 .ooo{ 
     height: 100vh;
     display: grid; 
+    /**uso do autofix*/
     grid-template-columns:repeat(auto-fit,100px) ;
-    grid-template-rows: 200px;
+    /*aumento das coplunas em 50px*/
+    grid-template-rows: 200px 1fr 200px;
     grid-gap: .5rem;
     margin-top: 10px;
-    grid-template-areas: "header header header header header"
-    "aside main main main  main"
-    "footer footer footer footer footer";
+    grid-template-areas:
+      "header header"
+    "aside main"
+    "aside footer";
 }
   
 header{
     grid-area: header;
+width:100%;
 }
-
 main{
     grid-area: main;
 }
 
 aside{
+
     grid-area: aside;
 }
 
@@ -184,7 +193,7 @@ footer{
 background-color: rgb(209, 142, 18);
 
 font-size: 2rem;
-padding: 1rem;
+
 
 }
 
@@ -194,15 +203,42 @@ padding: 1rem;
 }
 
 .ooo> * div:nth-child(2){ 
-    background-color: blueviolet;
-  
+    background-color: blueviolet;.ooo{
+    height:100vh;
+    display:grid;
 
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 150px 1fr 1fr;
+
+    gap:.5rem;
+
+    grid-template-areas:
+/*organizaçao do aside*/
+    "header header"
+    "aside main"
+    "aside footer";
 }
 
-.ooo> div:nth-child(3){ 
- 
-
+header{
+grid-area:header;
 }
+
+aside{
+grid-area:aside;
+}
+
+main{
+grid-area:main;
+}
+
+footer{
+grid-area:footer;
+}
+
+.ooo > *{
+background:orange;
+padding:20px;
+}}
 
 
 @media(min-width:768px){
@@ -223,11 +259,13 @@ padding: 1rem;
 
 }
 /*mudar nome*/
-header, footer{
+.l-header{ 
+    grid-column: site-start / site-end;
+}.l-footer{
 grid-column: site-start / site-end;
 }
 
-main{
+.l-main{
     grid-column: content-start / site-end;
 }
 
