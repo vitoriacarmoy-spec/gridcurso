@@ -254,7 +254,7 @@ padding:20px;
 
     gap: .5rem;
   }
-
+  
   .a-header {
     grid-column: 1 / 4;
     grid-row: 1;
@@ -289,11 +289,10 @@ padding:20px;
     display: grid;
     grid-gap:.5rem;
     grid-template-areas: 
-    "header"
-     "main"
-     "aside-main"
-     "sidebar"
-     "footer"
+    "header header header header header header"
+     ".     main   main   main   sidebar .    "
+     ".     aside-main aside-main aside-sec aside-sec .    "
+     "footer footer footer footer footer footer"
 
     ;
     grid-template-columns: 1fr;
@@ -325,15 +324,118 @@ padding:20px;
 
 .l-aside-main{
      background-color: rgb(78, 225, 65);
-    grid-area: sidebar;
+    grid-area: aside-main;
 } 
 .l-aside-sec{
  background-color: rgb(212, 41, 50);
-    grid-area: sidebar;
+    grid-area: aside-sec;
 }
 .l-footer{
     background-color: rgb(181, 212, 41);
-    grid-area: sidebar;
+    grid-area: footer;
 }
 
+}
+
+@media (min-width:48em){
+
+    .ppp{
+        min-height:100vh;
+
+        display:grid;
+        gap:.5rem;
+
+        grid-template-columns:
+            [full-start] 1fr
+            [container-start] repeat(6,1fr)
+            [container-end] 1fr
+            [full-end];
+    }
+
+    /* Elementos centralizados */
+    .p-header,
+    .p-hero,
+    .p-highlights,
+    .p-main-content,
+    .p-footer,
+    .p-aside{
+        grid-column: container-start / container-end;
+    }
+
+    /* Highlights em 5 colunas */
+    .p-highlights{
+        display:grid;
+        gap:.5rem;
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    /* Classes utilitárias */
+    .u-grid-full{
+        grid-column: full-start / full-end;
+    }
+
+    .u-grid-center{
+        grid-column: container-start / container-end;
+    }
+
+    .u-grid-left{
+        grid-column: full-start / container-start;
+    }
+
+    .u-grid-right{
+        grid-column: container-end / full-end;
+    }
+}
+
+/* Cards */
+.c-highlight{
+    background: coral;
+    min-height:80px;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.ppp{
+    
+    padding:.5rem;
+}
+
+.p-header{
+    background:skyblue;
+    min-height:50px;
+}
+
+.p-hero{
+    background:mediumseagreen;
+    min-height:250px;
+}
+
+.p-highlights{
+    display:grid;
+    gap:.5rem;
+}
+
+.c-highlight{
+    background:coral;
+    min-height:80px;
+}
+
+.p-main-content{
+    background:royalblue;
+    min-height:250px;
+}
+
+.p-aside{
+    background:goldenrod;
+    min-height:250px;
+}
+
+.p-footer{
+    background:skyblue;
+    min-height:250px;
 }
